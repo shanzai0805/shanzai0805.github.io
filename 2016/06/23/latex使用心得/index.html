@@ -21,7 +21,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/06/23/latex使用心得/index.html">
 <meta property="og:site_name" content="浅唱">
 <meta property="og:description" content="由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。">
-<meta property="og:updated_time" content="2016-06-24T07:01:50.164Z">
+<meta property="og:updated_time" content="2016-06-24T07:17:55.761Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="latex使用心得">
 <meta name="twitter:description" content="由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。">
@@ -84,7 +84,7 @@
             
             <a href="/2016/06/23/latex使用心得/#comments" class="leave-reply">Reply</a>
             
-            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/06/23/latex使用心得/" data-id="cipte5e4z0001tcuimnj978sm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/06/23/latex使用心得/" data-id="cipteoljf000150uixi2m4390" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
         </div><!-- .comments-link -->
       </header><!-- .entry-header -->
 
@@ -92,7 +92,7 @@
       
         <p>由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。</p>
 <a id="more"></a>
-<h3 id="是否有必要使用latex？"><a href="#是否有必要使用latex？" class="headerlink" title="是否有必要使用latex？"></a>是否有必要使用latex？</h3><p>在开始使用这个排版软件之前，首先要评估一下自己的需求，是不是有非用不可的必要？通常来说，向国外的英文期刊和会议投稿都会同时提供word和latex两个模板。如果你的论文写作过程中并没有很多公式或特殊符号，那么word可能是一个比较好的选择。因为它的特点就是：所见即所得。简单的排版完全没有问题，参考文献引用也非常容易，转化成对应的PDF形式即可。可是如果像我一样，一篇文章中用到了将近20个公式和许多希腊字母的话，word排版的弊病就显而易见了：一旦在正常文本所在行插入希腊字母，例如$\alpha$,$\beta$,$\gamma$ 等，行间距就会发生变化；同样地，插入行间公式后字体大小、间距不一样等许多问题接踵而来。虽然复制粘贴很容易，但是那歪歪扭扭的排版，真的是要逼死强迫症星人了。在这种情况下latex就自带光环的出现了，从来不用考虑间距问题，几个声明语句就轻松搞定，绝对不会出现莫名其妙的错位问题，当然前提是可以编译通过。</p>
+<h3 id="是否有必要使用latex？"><a href="#是否有必要使用latex？" class="headerlink" title="是否有必要使用latex？"></a>是否有必要使用latex？</h3><p>在开始使用这个排版软件之前，首先要评估一下自己的需求，是不是有非用不可的必要？通常来说，向国外的英文期刊和会议投稿都会同时提供word和latex两个模板。如果你的论文写作过程中并没有很多公式或特殊符号，那么word可能是一个比较好的选择。因为它的特点就是：所见即所得。简单的排版完全没有问题，参考文献引用也非常容易，转化成对应的PDF形式即可。可是如果像我一样，一篇文章中用到了将近20个公式和许多希腊字母的话，word排版的弊病就显而易见了：一旦在正常文本所在行插入希腊字母，行间距就会发生变化；同样地，插入行间公式后字体大小、间距不一样等许多问题接踵而来。虽然复制粘贴很容易，但是那歪歪扭扭的排版，真的是要逼死强迫症星人了。在这种情况下latex就自带光环的出现了，从来不用考虑间距问题，几个声明语句就轻松搞定，绝对不会出现莫名其妙的错位问题，当然前提是可以编译通过。</p>
 <h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>拿到自己所需要投稿的期刊或会议的latex模板后，很有必要把里边的一些注释通读一遍。里边定义了在你写作过称重需要用到的包和样式，盲目地去粘贴外部包可能会导致冲突。对每个包的具体作用要有一个大致的了解，需要时放在合适的位置。</p>
 <h3 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h3><p>在这里要推荐一下从学妹那里学习到的一个很好用的插件：<a href="http://cherishlc.iteye.com/blog/1738083" target="_blank" rel="external">Excel2LaTex</a>，安装完成后只需要从Excel中选中需要的表格就可以生成latex格式，支持表格中的字体加粗。以下是我遇到的几个问题：</p>
 <ul>
