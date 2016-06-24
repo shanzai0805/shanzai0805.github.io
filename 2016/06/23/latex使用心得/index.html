@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <meta name="description" content="A record of life" />
+  
+
+  
+  
+  
+  
+  
+  
+  <title>latex使用心得 | 浅唱</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="latex使用心得">
+<meta property="og:url" content="http://yoursite.com/2016/06/23/latex使用心得/index.html">
+<meta property="og:site_name" content="浅唱">
+<meta property="og:description" content="由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。">
+<meta property="og:updated_time" content="2016-06-24T07:01:50.164Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="latex使用心得">
+<meta name="twitter:description" content="由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+  
+  <!-- baidu webmaster push -->
+  <script src='//push.zhanzhang.baidu.com/push.js'></script>
+</head>
+<body class="home blog custom-background custom-font-enabled single-author">
+  <div id="page" class="hfeed site">
+      <header id="masthead" class="site-header" role="banner">
+    <hgroup>
+      <h1 class="site-title">
+        <a href="/" title="浅唱" rel="home">浅唱</a>
+      </h1>
+      
+        <h2 class="site-description">
+          <a href="/" id="subtitle">shanzai&#39;s world</a>
+        </h2>
+      
+    </hgroup>
+
+    <nav id="site-navigation" class="main-navigation" role="navigation">
+            <button class="menu-toggle">菜单</button>
+            <a class="assistive-text" href="/#content" title="跳至内容">跳至内容</a><!--TODO-->
+            <div class="menu-main-container">
+                <ul id="menu-main" class="nav-menu">
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/archives">Archives</a></li>
+                
+                    <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about">About</a></li>
+                
+                </ul>
+            </div>
+    </nav>
+</header>
+      <div id="main" class="wrapper">
+        <div id="primary" class="site-content"><div id="content" role="main"><article id="post-latex使用心得" class="post-latex使用心得 post type-post status-publish format-standard hentry">
+    <!---->
+
+      <header class="entry-header">
+        
+        
+  
+    <h1 class="entry-title article-title">
+      latex使用心得
+    </h1>
+  
+
+        
+        <div class="comments-link">
+            
+            <a href="/2016/06/23/latex使用心得/#comments" class="leave-reply">Reply</a>
+            
+            <a href="javascript:void(0);" data-url="http://yoursite.com/2016/06/23/latex使用心得/" data-id="cipte5e4z0001tcuimnj978sm" class="leave-reply bdsharebuttonbox" data-cmd="more">Share</a>
+        </div><!-- .comments-link -->
+      </header><!-- .entry-header -->
+
+    <div class="entry-content">
+      
+        <p>由于近期的论文格式修改需要，经过了一番心理斗争之后，最后还是在word和latex之间选择了后者。经过大约三天的煎熬，解决了N个bug，终于完成了排版工作，达到了自己心目中的预期效果。在排查错误的过程中，同学和google给了我很大的帮助，但是也少不了走弯路。在此记录下一些问题，也算是给后来人一个总结。</p>
+<a id="more"></a>
+<h3 id="是否有必要使用latex？"><a href="#是否有必要使用latex？" class="headerlink" title="是否有必要使用latex？"></a>是否有必要使用latex？</h3><p>在开始使用这个排版软件之前，首先要评估一下自己的需求，是不是有非用不可的必要？通常来说，向国外的英文期刊和会议投稿都会同时提供word和latex两个模板。如果你的论文写作过程中并没有很多公式或特殊符号，那么word可能是一个比较好的选择。因为它的特点就是：所见即所得。简单的排版完全没有问题，参考文献引用也非常容易，转化成对应的PDF形式即可。可是如果像我一样，一篇文章中用到了将近20个公式和许多希腊字母的话，word排版的弊病就显而易见了：一旦在正常文本所在行插入希腊字母，例如$\alpha$,$\beta$,$\gamma$ 等，行间距就会发生变化；同样地，插入行间公式后字体大小、间距不一样等许多问题接踵而来。虽然复制粘贴很容易，但是那歪歪扭扭的排版，真的是要逼死强迫症星人了。在这种情况下latex就自带光环的出现了，从来不用考虑间距问题，几个声明语句就轻松搞定，绝对不会出现莫名其妙的错位问题，当然前提是可以编译通过。</p>
+<h3 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h3><p>拿到自己所需要投稿的期刊或会议的latex模板后，很有必要把里边的一些注释通读一遍。里边定义了在你写作过称重需要用到的包和样式，盲目地去粘贴外部包可能会导致冲突。对每个包的具体作用要有一个大致的了解，需要时放在合适的位置。</p>
+<h3 id="插入表格"><a href="#插入表格" class="headerlink" title="插入表格"></a>插入表格</h3><p>在这里要推荐一下从学妹那里学习到的一个很好用的插件：<a href="http://cherishlc.iteye.com/blog/1738083" target="_blank" rel="external">Excel2LaTex</a>，安装完成后只需要从Excel中选中需要的表格就可以生成latex格式，支持表格中的字体加粗。以下是我遇到的几个问题：</p>
+<ul>
+<li><p>如果表格中出现了中英文的混排，一定要在声明区\begin{document}之后加入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;CJK&#125;&#123;GBK&#125;&#123;song&#125;</span><br><span class="line">……</span><br><span class="line">\end&#123;CJK&#125;</span><br></pre></td></tr></table></figure>
+<p>表明是GBK编码，中文字体为宋体（可选其他字体）。</p>
+</li>
+</ul>
+<ul>
+<li><p>表格中需要插入图片，在声明区声明\usepackage{graphicx}后，用\includegraphics{}命令，在表格需要插入图片的对应位置写明即可，图片放在主文件夹下。</p>
+</li>
+<li><p>插入图片后发现文字紧贴下基线，需要排版成垂直居中的格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\begin&#123;tabular&#125;&#123;m&#123;2cm&#125;&lt;&#123;\centering&#125; m&#123;2cm&#125;&lt;&#123;\centering&#125; m&#123;2cm&#125;&lt;&#123;\centering&#125;&#125;</span><br></pre></td></tr></table></figure>
+<p>表格中有几列写几个公式，可以达到垂直居中的效果，并且固定了行高。</p>
+</li>
+</ul>
+<h3 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h3><p>提到参考文献的引用，latex真是让人又爱又恨。一方面它很方便，在<a href="http://scholar.google.com" target="_blank" rel="external">谷歌学术</a>中搜索到想要引用的文章之后，点击导入BibTex按钮就可以生成latex可识别的格式，省去了在word中逐句敲的烦恼。另一方面，如果参考文献有确定要求的格式，而在声明区又没有正确写明包格式的话，那将会引发灾难性后果：始终编译不出PDF文档。</p>
+<p>在latex中，可以使用其自带的参考文献格式，如：unsrt, plain等，或者用写好的bst文件所定义的格式，如IEEE模板中的IEEEtran.bst。使用时在 \bibliographystyle{unsrt} 的圆括号中写明所需要的格式即可。在自己的tex主文件夹下创建一个bib文件，专门用来存放自己所需要的文章，即对应的BibTex格式，不需要任何声明。在end{document}之前加入\bibliography{mybib}就可以在正文中用\cite{}命令来引用自己定义的mybib.bib文件中的参考文献了。</p>
+<p>在我使用过程中碰到了如下几个问题：</p>
+<ul>
+<li><p>我所使用的模板为IEEEtran，在正常情况下，只需要在正文中声明</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">\usepackage&#123;natbib&#125;</span><br><span class="line">\bibliographystyle&#123;IEEEtran&#125;</span><br><span class="line">\bibliography&#123;mybib&#125;</span><br></pre></td></tr></table></figure>
+<p>并把IEEEtran.bst文件放到主文件夹下就可以显示对应格式，可是编译之后一直报错：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Package natbib Error: Bibliography not compatible with author-year citations</span><br></pre></td></tr></table></figure>
+<p>但是使用自带的模板unsrt就可以正常编译，几乎所有的相关帖子都被我翻遍了，试用了很多方法，例如删除生成的中间文件.bbl和.aux后重新编译，依旧报同样的错误。最后在一篇英文帖子中终于找到了解决的办法，在声明区的{natbib}前应该加一句话：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\usepackage[square,sort,comma,numbers]&#123;natbib&#125;</span><br></pre></td></tr></table></figure>
+<p>果然，编译通过。仔细观察错误的原因：参考文献引用的作者-年不一致。但是我的bib文件中所有的参考文献均有author和year，并不是由于缺少这一项而引发的错误。在natbib的选项区加入options即可解决问题。</p>
+</li>
+<li><p>使用unstr引用格式时，参考文献中的期刊名字变成了带下划线的格式，视觉效果十分丑陋。</p>
+<p>其实问题就是因为我在不知情的情况下胡乱引用了ulem宏包，而这个包我的论文也并没有用到。ulem宏包重新定义了\emph命令，变成下划线了，可以用\normalem切换为之前\emph的定义。</p>
+</li>
+</ul>
+<h3 id="遇到问题怎么办？"><a href="#遇到问题怎么办？" class="headerlink" title="遇到问题怎么办？"></a>遇到问题怎么办？</h3><p>在使用latex的过程中，不可避免地会碰到各种问题。即便是用过的老手，遇到问题后也不能保证一定会解决。这种时候千万不要气馁，因为一个小小的错误而放弃。最好用的应该就是谷歌了，我遇到的大部分问题都是这样解决的。一个中文的<a href="http://bbs.ctex.org/forum.php" target="_blank" rel="external">cTex社区</a>有许多网友的提问和解答，相信在这个网站上也能消灭大部分常见问题了。在谷歌搜索时不要过度依赖中文网站的问答，因为有些时候更多的情况会在英文网站中出现，比如我参考文献中的第一个问题，就是在<a href="http://tex.stackexchange.com/" target="_blank" rel="external">Tex社区</a>中找到的。</p>
+<p>Anyway，当你看到最终解决完问题之后的文章排版如此整洁漂亮的时候，心里的愉悦感应该就会超过解决bug时的咬牙切齿了。End，祝使用latex愉快！</p>
+
+      
+    </div><!-- .entry-content -->
+
+    <footer class="entry-meta">
+    <a href="/2016/06/23/latex使用心得/">
+    <time datetime="2016-06-23T13:56:26.000Z" class="entry-date">
+        2016-06-23
+    </time>
+</a>
+    
+  <span class="article-delim">&#8226;</span>
+  <div class="article-category">
+  <a class="article-category-link" href="/categories/技术/">技术</a>
+  </div>
+
+    
+  <span class="article-delim">&#8226;</span>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/latex/">latex</a></li></ul>
+
+    </footer>
+</article>
+
+
+    
+<nav class="nav-single">
+    <h3 class="assistive-text">文章导航</h3>
+    
+        <span class="nav-previous"><a href="/2016/06/24/Begin-Again观影笔记/" rel="prev"><span class="meta-nav">←</span> Begin Again 观影笔记</a></span>
+    
+    
+        <span class="nav-next"><a href="/2016/06/19/周记/" rel="next">第1周——Try Everyting <span class="meta-nav">→</span></a></span>
+    
+</nav><!-- .nav-single -->
+
+
+
+
+
+
+<section id="comments">
+<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="post-latex使用心得" data-title="latex使用心得" data-url="http://yoursite.com/2016/06/23/latex使用心得/"></div>
+<!-- 多说评论框 end -->
+<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"shanzai0805"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- 多说公共JS代码 end -->
+
+</section>
+
+
+</div></div>
+        <div id="secondary" class="widget-area" role="complementary">
+  
+    <aside id="search" class="widget widget_search"><form role="search" method="get" accept-charset="utf-8" id="searchform" class="searchform" action="//google.com/search">
+    <div>
+        <input type="text" value="" name="s" id="s" />
+        <input type="submit" id="searchsubmit" value="搜索" />
+    </div>
+</form></aside>
+  
+    
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget-content">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/movie/">movie</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/周记/">周记</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget-content">
+      <ul>
+        
+          <li>
+            <a href="/2016/06/24/Begin-Again观影笔记/">Begin Again 观影笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/23/latex使用心得/">latex使用心得</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/19/周记/">第1周——Try Everyting</a>
+          </li>
+        
+      </ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget-content">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/latex/">latex</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/吉他/">吉他</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/碎碎念/">碎碎念</a><span class="tag-list-count">1</span></li></ul>
+    </div>
+  </aside>
+
+  
+    
+  <aside class="widget">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget-content tagcloud">
+      <a href="/tags/latex/" style="font-size: 10px;">latex</a> <a href="/tags/吉他/" style="font-size: 10px;">吉他</a> <a href="/tags/碎碎念/" style="font-size: 10px;">碎碎念</a>
+    </div>
+  </aside>
+
+  
+</div>
+      </div>
+      <footer id="colophon" role="contentinfo">
+    <p>&copy; 2016 lishan
+    All rights reserved.</p>
+    <p>Powered by <a href="http://hexo.io/" target="_blank">Hexo</a></p>
+</footer>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"1","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+<script src="/js/jquery-2.0.3.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+<script src="/js/navigation.js"></script>
+
+<div id="bg"></div>
+
+  </div>
+</body>
+</html>
